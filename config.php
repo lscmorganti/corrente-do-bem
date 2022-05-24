@@ -5,9 +5,9 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 define( 'HOST', 'localhost' );
-define( 'USER', 'lucas' );
-define( 'PASSWORD', 'db_lucas2020' );
-define( 'DB_NAME', 'lucasdb' );
+define( 'USER', 'admin' );
+define( 'PASSWORD', '' );
+define( 'DB_NAME', 'corrente' );
  
 /* Attempt to connect to MySQL database */
 try{
