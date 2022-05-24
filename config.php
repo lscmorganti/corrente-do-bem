@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-define( 'HOST', 'localhost' );
+define( 'HOST', 'corrente-do-bem-mysqldb.cxmowgfbjuf5.us-east-1.rds.amazonaws.com' );
 define( 'USER', 'admin' );
 define( 'PASSWORD', '' );
 define( 'DB_NAME', 'corrente' );
