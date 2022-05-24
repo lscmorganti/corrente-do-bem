@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 define( 'HOST', 'corrente-do-bem-mysqldb.cxmowgfbjuf5.us-east-1.rds.amazonaws.com' );
 define( 'USER', 'admin' );
 define( 'PASSWORD', '' );
-define( 'DB_NAME', 'corrente' );
+define( 'DB_NAME', 'corrente-do-bem-mysqldb' );
  
 /* Attempt to connect to MySQL database */
 try{
