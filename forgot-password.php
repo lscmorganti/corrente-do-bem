@@ -48,8 +48,6 @@
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
                                                 placeholder="Coloque seu email aqui!">
                                         </div>
-                                        <a href="login.html" class="btn btn-primary btn-user btn-block">
-                                            
                                         </a>
                                         <div class="form-group">
                                             <input type="submit" class="btn btn-primary btn-user btn-block" value="Resetar a senha">
