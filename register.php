@@ -70,10 +70,10 @@
                             </form>
                             <hr>
                             <div class="text-center">
-                                <a class="small" href="forgot-password.html">Esqueci a senha :(</a>
+                                <a class="small" href="forgot-password.php">Esqueci a senha :(</a>
                             </div>
                             <div class="text-center">
-                                <a class="small" href="login.html">Já possuo cadastro</a>
+                                <a class="small" href="login.php">Já possuo cadastro</a>
                             </div>
                         </div>
                     </div>
