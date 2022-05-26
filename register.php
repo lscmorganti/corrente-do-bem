@@ -65,10 +65,8 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="submit" class="btn btn-primary btn-user btn-block" value="Submit">
-                                    <input type="reset" class="btn btn-default" value="Reset">
+                                    <input type="submit" class="btn btn-primary btn-user btn-block" value="Criar meu cadastro">
                                 </div>                                
-                                <hr>
                             </form>
                             <hr>
                             <div class="text-center">
