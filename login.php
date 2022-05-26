@@ -141,6 +141,9 @@
                                             <input type="password" name="password" class="form-control form-control-user" placeholder="Senha">
                                             <span class="help-block"><?php echo $password_err; ?></span>
                                         </div>
+                                        <div class="form-group">
+                                            <input type="submit" class="btn btn-primary btn-user btn-block" value="Submit">
+                                        </div>                                                                                
                                         <div class="text-center">
                                             <a class="small" href="forgot-password.html">Esqueci a senha :(</a>
                                         </div>
