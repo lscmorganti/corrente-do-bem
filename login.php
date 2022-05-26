@@ -145,7 +145,7 @@
                                             <a class="small" href="forgot-password.html">Esqueci a senha :(</a>
                                         </div>
                                         <div class="text-center">
-                                            <a class="small" href="register.html">Criar meu cadastro!</a>
+                                            <a class="small" href="register.php">Criar meu cadastro!</a>
                                         </div>
                                     </form>
                                     <hr>
