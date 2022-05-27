@@ -13,8 +13,8 @@
     // other than the default.
     $SesClient = new SesClient([
         'profile' => 'default',
-        'version' => '2010-12-01',
-        'region'  => 'us-west-2'
+        'version' => '2022-05-26',
+        'region'  => 'us-east-1'
     ]);
 
     // Replace sender@example.com with your "From" address.
@@ -23,12 +23,12 @@
 
     // Replace these sample addresses with the addresses of your recipients. If
     // your account is still in the sandbox, these addresses must be verified.
-    $recipient_emails = ['lscmorganti@example.com'];
+    $recipient_emails = ['lscmorganti@gmail.com'];
 
     // Specify a configuration set. If you do not want to use a configuration
     // set, comment the following variable, and the
     // 'ConfigurationSetName' => $configuration_set argument below.
-    $configuration_set = 'ConfigSet';
+    $configuration_set = 'conf-set-ses';
 
     $subject = 'Amazon SES test (AWS SDK for PHP)';
     $plaintext_body = 'This email was sent with Amazon SES using the AWS SDK for PHP.' ;
