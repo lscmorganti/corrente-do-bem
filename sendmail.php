@@ -27,8 +27,8 @@ try {
     //Recipients
     $mail->setFrom('administrator@tautologica.com', 'Mailer');
     //$mail->addAddress('administrator@tautologica.com', 'Administrator - Tautologica');     //Add a recipient
-    $mail->addAddress('lscmorganti@gmail.com', 'Administrator - Tautologica');
-    //$mail->addAddress('ellen@example.com');               //Name is optional
+    //$mail->addAddress('lscmorganti@gmail.com', 'Administrator - Tautologica');
+    $mail->addAddress('yuliajlo@hotmail.com');               //Name is optional
     $mail->addReplyTo('administrator@tautologica.com', 'Administrator - Tautologica');
     //$mail->addCC('cc@example.com');
     //$mail->addBCC('bcc@example.com');
@@ -39,8 +39,8 @@ try {
 
     //Content
     $mail->isHTML(false);                                  //Set email format to HTML
-    $mail->Subject = 'Teste de envio PHP';
-    $mail->Body    = 'Conteudo do email';
+    $mail->Subject = 'Teste de envio - Corrente do Bem';
+    $mail->Body    = 'Bora concluir o ultimo tri';
     //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
