@@ -50,12 +50,12 @@ if(isset($_POST["username"])){
                                     <div class="form-group row">
 
                                         <div class="col-sm-6 mb-3 mb-sm-0">
-                                            <input type="text" class="form-control form-control-user" id="nome"
+                                            <input type="text" class="form-control form-control-user" id="nome" name="nome"
                                                 placeholder="Nome">
                                         </div>
 
                                         <div class="col-sm-6">
-                                            <input type="text" class="form-control form-control-user" id="sobrenome"
+                                            <input type="text" class="form-control form-control-user" id="sobrenome" name="sobrenome"
                                                 placeholder="Sobrenome">
                                         </div>
                                     </div>
