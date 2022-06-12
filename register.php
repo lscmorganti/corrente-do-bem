@@ -1,3 +1,14 @@
+<?php
+if(isset($_POST["username"])){
+    session_start();
+    $_SESSION["nome"] = $_POST["nome"];
+    $_SESSION["sobrenome"] = $_POST["sobrenome"];
+    $_SESSION["username"] = $_POST["username"];
+    $_SESSION["password"] = $_POST["password"];
+    header("location: cadastra.php");
+    die();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -39,28 +50,30 @@
                                     <div class="form-group row">
 
                                         <div class="col-sm-6 mb-3 mb-sm-0">
-                                            <input type="text" class="form-control form-control-user" id="exampleFirstName"
-                                                placeholder="First Name">
+                                            <input type="text" class="form-control form-control-user" id="nome"
+                                                placeholder="Nome">
                                         </div>
 
                                         <div class="col-sm-6">
-                                            <input type="text" class="form-control form-control-user" id="exampleLastName"
-                                                placeholder="Last Name">
+                                            <input type="text" class="form-control form-control-user" id="sobrenome"
+                                                placeholder="Sobrenome">
                                         </div>
                                     </div>
                                     <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-                                        <input type="email" name="username" class="form-control form-control-user" aria-describedby="emailHelp"
-                                            placeholder="Seu email!" value="<?php echo $username; ?>">
+                                        <input type="email" name="username" 
+                                                id="username" class="form-control form-control-user" 
+                                                    aria-describedby="emailHelp"
+                                                    placeholder="Seu email!" value="<?php echo $username; ?>">
                                         <span class="help-block"><?php echo $username_err; ?></span>
                                     </div>                                  
                                     <div class="form-group row">
                                         <div class="col-sm-6 mb-3 mb-sm-0 form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                                             <input type="password" class="form-control form-control-user"
-                                                name="password" placeholder="Senha">
+                                                id="password" name="password" placeholder="Senha">
                                         </div>
                                         <div class="col-sm-6 form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                                             <input type="password" class="form-control form-control-user"
-                                                id="repetePassword" placeholder="Repita a senha">
+                                                id="repetePassword" name="password" placeholder="Repita a senha">
                                         </div>
                                     </div>
                                     <div class="form-group">

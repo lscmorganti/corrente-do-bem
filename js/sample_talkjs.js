@@ -1,7 +1,7 @@
 Talk.ready.then(function () {
     var me = new Talk.User({
         id: '123456',
-        name: 'Alice',
+        name: 'Serhumano',
         email: 'alice@example.com',
         photoUrl: 'https://demo.talkjs.com/img/alice.jpg',
         welcomeMessage: 'Hey there! How are you? :-)',
@@ -12,7 +12,7 @@ Talk.ready.then(function () {
     });
     var other = new Talk.User({
         id: '654321',
-        name: 'Sebastian',
+        name: 'Robozinho',
         email: 'Sebastian@example.com',
         photoUrl: 'https://demo.talkjs.com/img/sebastian.jpg',
         welcomeMessage: 'Hey, how can I help?',
