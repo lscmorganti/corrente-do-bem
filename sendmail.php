@@ -27,8 +27,8 @@ try {
     //Recipients
     $mail->setFrom('administrator@tautologica.com', 'Mailer');
     //$mail->addAddress('administrator@tautologica.com', 'Administrator - Tautologica');     //Add a recipient
-    //$mail->addAddress('lscmorganti@gmail.com', 'Administrator - Tautologica');
-    $mail->addAddress('yuliajlo@hotmail.com');               //Name is optional
+    $mail->addAddress('lscmorganti@gmail.com', 'Administrator - Tautologica');
+    //$mail->addAddress('yuliajlo@hotmail.com');               //Name is optional
     $mail->addReplyTo('administrator@tautologica.com', 'Administrator - Tautologica');
     //$mail->addCC('cc@example.com');
     //$mail->addBCC('bcc@example.com');

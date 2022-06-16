@@ -27,9 +27,16 @@
         return $guid;
     }
 
-    $guid = create_guid();
-    echo $guid;
+    echo create_guid();
+    //echo $guid;
+/*
+    $sql = "INSERT INTO programadores(nome, site) VALUES(:nome, :site)";
+    $stmt = $PDO->prepare( $sql );
+    $stmt->bindParam( ':nome', $nome );
+    $stmt->bindParam( ':site', $site );
+    $result = $stmt->execute();
 
+*/
     //cria no TalkJS
     $curl = curl_init();
     curl_setopt_array($curl, array(
