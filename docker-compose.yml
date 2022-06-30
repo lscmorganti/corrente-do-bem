@@ -1,0 +1,25 @@
+services:
+  php-corrente-do-bem-dev:
+    container_name: php-corrente
+    build:
+      context: ./src
+      dockerfile: Dockerfile
+    depends_on:
+      - db-corrente-do-bem-dev
+    volumes:
+      - ./src:/var/www/html/
+    ports:
+      - 8000:80 
+  db-corrente-do-bem-dev:
+      container_name: db-corrente
+      image: mysql
+      restart: always
+      environment:
+          MYSQL_ROOT_PASSWORD: a43zend9
+          MYSQL_DATABASE: corrente_do_bem
+          MYSQL_USER: admin
+          MYSQL_PASSWORD: a43zend9
+      ports:
+          - "8306:3306"
+      volumes:
+        - ./db:/docker-entrypoint-initdb.d
