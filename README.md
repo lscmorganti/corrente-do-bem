@@ -1,2 +1,3 @@
 # corrente-do-bem
-Projeto com finalidade educacional para o MBA Executivo Internacional - 2022
+# Projeto educacional para o MBA Executivo Internacional - 2022
+# Baseado em https://github.com/MartMbithi/php-crud
