@@ -86,9 +86,6 @@ error_reporting(E_ALL);
                                 <a href="landing_servicos.php">Serviços</a>
                             </li>
                             <li>
-                                <a href="cliente/">Cliente Login</a>
-                            </li>
-                            <li>
                                 <a href="prestador/">Prestador Login</a>
                             </li>
 

@@ -65,9 +65,6 @@
                                 <a href="landing_books.php">Serviços</a>
                             </li>
                             <li>
-                                <a href="cliente/">Cliente Login</a>
-                            </li>
-                            <li>
                                 <a href="prestador/">Prestador Login</a>
                             </li>
                             <li>
