@@ -16,7 +16,7 @@ services:
       restart: always
       environment:
           MYSQL_ROOT_PASSWORD: a43zend9
-          MYSQL_DATABASE: corrente_do_bem
+          MYSQL_DATABASE: correntedobemdb
           MYSQL_USER: admin
           MYSQL_PASSWORD: a43zend9
       ports:

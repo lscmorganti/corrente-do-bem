@@ -1,5 +1,5 @@
 <?php
-    include("../../env.php");
+    include("env.php");
 
     $DB_user=USER;
     $DB_pass=PASSWORD;
