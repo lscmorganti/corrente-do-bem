@@ -1,8 +1,11 @@
 <?php
-    $DB_host = "db";
-    $DB_user = "admin";
-    $DB_pass = "a43zend9";
-    $DB_name = "library_management_system";
+    include("../../env.php");
+
+    $DB_user=USER;
+    $DB_pass=PASSWORD;
+    $DB_host=HOST;
+    $DB_name=DB_NAME;
+
     try
     {
         $DB_con = new PDO("mysql:host={$DB_host};dbname={$DB_name}",$DB_user,$DB_pass);
