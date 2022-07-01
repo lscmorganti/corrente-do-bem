@@ -44,7 +44,7 @@
                 <div class="space-20"></div>
                 <ul class="list-unstyled menu-tip">
                     <li><a href="landing_servicos.php">Serviços</a></li>
-                    <li><a href="prestadores/">Prestador Login</a></li>
+                    <li><a href="prestador/">Prestador Login</a></li>
                     <li><a href="login.php">Admin Login</a></li>
                 </ul>
             </div>
