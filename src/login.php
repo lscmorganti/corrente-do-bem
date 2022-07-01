@@ -41,8 +41,8 @@ error_reporting(E_ALL);
                 <div class="form-container">
                     <div class="form-content">
 
-                        <h1 class="">Library Management System</h1>
-                        <p class="">Administrator Login Panel</p>
+                        <h1 class="">Corrente do Bem</h1>
+                        <p class="">Login de administração</p>
                         
                         <form method="post" class="text-left">
                             <div class="form">
