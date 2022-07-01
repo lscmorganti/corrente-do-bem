@@ -85,11 +85,11 @@
           colors: ['transparent']
       },
       series:[{
-          name: 'Books',
+          name: 'Serviços',
           data: [<?php echo $borrow;?> , <?php echo $return;?>, <?php echo $damanged;?>, <?php echo $lost;?>]
       }],
       xaxis: {
-          categories: ['Borrowed Books', 'Returned Books', 'Damanged Books', 'Lost Books'],
+          categories: ['Curiosos', 'Prospecção', 'Em aberto', 'Encerrados'],
       },
       fill: {
         type: 'gradient',

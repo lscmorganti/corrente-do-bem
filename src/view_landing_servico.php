@@ -86,14 +86,12 @@ error_reporting(E_ALL);
                                 <a href="landing_servicos.php">Serviços</a>
                             </li>
                             <li>
-                                <a href="student/">Student Login</a>
+                                <a href="cliente/">Cliente Login</a>
                             </li>
                             <li>
-                                <a href="librarian/">Librarian Login</a>
+                                <a href="prestador/">Prestador Login</a>
                             </li>
-                            <li>
-                                <a href="login.php">Admin Login</a>
-                            </li>
+
                         </ul>
                     </div>
                 </div>

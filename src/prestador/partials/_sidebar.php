@@ -33,10 +33,7 @@
                 </a>
                 <ul class="collapse submenu list-unstyled" id="books" data-parent="#accordionExample">
                     <li>
-                        <a href="add_books.php"> Adicionar </a>
-                    </li>
-                    <li>
-                        <a href="manage_books.php"> Gerenciar </a>
+                        <a href="add_servicos.php"> Adicionar </a>
                     </li>
                 </ul>
             </li>

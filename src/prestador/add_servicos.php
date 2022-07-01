@@ -26,8 +26,8 @@
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
                                 <li class="breadcrumb-item"><a href="javascript:void(0);">Dashboard</a></li>
-                                <li class="breadcrumb-item"><a href="javascript:void(0);">Books</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><span>Book Categories</span></li>
+                                <li class="breadcrumb-item"><a href="javascript:void(0);">Serviços</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span>Categorias de serviço</span></li>
                             </ol>
                         </nav>
                     </div>
@@ -59,15 +59,15 @@
                                 <table id="html5-extension" class="table table-hover non-hover" style="width:100%">
                                     <thead>
                                         <tr>
-                                            <th>Book Category Code</th>
-                                            <th>Book Category Name</th>
-                                            <th>Action</th>
+                                            <th>Cod Categoria Serviço</th>
+                                            <th>Nome da Categoria</th>
+                                            <th>Ação</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
                                             //Get all librarians
-                                            $ret="SELECT * FROM book_categories  "; 
+                                            $ret="SELECT * FROM service_categories  "; 
                                             $stmt= $mysqli->prepare($ret) ;
                                             $stmt->execute();
                                             $res=$stmt->get_result();
@@ -79,8 +79,8 @@
                                                 <td><?php echo $cat->category_code;?></td>
                                                 <td><?php echo $cat->category_name;?></td>
                                                 <td>
-                                                    <a href="add_book_per_category.php?category=<?php echo $cat->category_id;?>" class="badge outline-badge-success text-primary bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add New Book Under <?php echo $cat->category_name;?> Category">
-                                                        Add Book
+                                                    <a href="add_service_per_category.php?category=<?php echo $cat->category_id;?>" class="badge outline-badge-success text-primary bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Adicionar novo serviço na categoria <?php echo $cat->category_name;?> Categoria">
+                                                        Novo
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg> 
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>                                                   
                                                     </a>

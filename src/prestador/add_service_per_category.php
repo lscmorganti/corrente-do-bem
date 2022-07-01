@@ -1,43 +1,42 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
     session_start();
     include('config/config.php');
     include('config/checklogin.php');
     check_login();
     
-        if(isset($_POST['book']))
+        if(isset($_POST['addservico']))
         {
             //Prevent Posting Blank Values
-            if (empty($_POST['book_title']) || empty($_POST['book_author']) || empty($_POST['book_isbn_no']) || empty($_POST['book_publisher'])  || empty($_POST['book_copies'])) 
+            if (empty($_POST['servico_title'])) 
             {
-                $err="Blank Values Not Accepted";
+                $err="Todos os campos são obrigatórios";
             }
             else
             {  
                 $category = $_GET['category'];
-                $book_title = $_POST['book_title'];
-                $book_author = $_POST['book_author'];
-                $book_isbn_no = $_POST['book_isbn_no'];
-                $book_publisher = $_POST['book_publisher'];
-                $book_coverimage = $_FILES['book_coverimage']['name'];
-                move_uploaded_file($_FILES["book_coverimage"]["tmp_name"],"../assets/img/books/".$_FILES["book_coverimage"]["name"]);
-                $book_status = $_POST['book_status'];
-                $book_summary = $_POST['book_summary'];
-                $book_copies = $_POST['book_copies'];
+                $servico_title = $_POST['servico_title'];
+                $servico_coverimage = $_FILES['servico_coverimage']['name'];
+                move_uploaded_file($_FILES["servico_coverimage"]["tmp_name"],"../assets/img/servicos/".$_FILES["servico_coverimage"]["name"]);
+                $servico_status = $_POST['servico_status'];
+                $servico_summary = $_POST['servico_summary'];
                      
                 //Insert Captured information to a database table
-                $postQuery="INSERT INTO books (book_category_id, book_publisher, book_title, book_author, book_isbn_no, book_coverimage, book_status, book_summary, book_copies) VALUES(?,?,?,?,?,?,?,?,?)";
+                $postQuery="INSERT INTO servicos (servico_category_id, servico_title, servico_login_id, servico_coverimage, servico_status, servico_summary) VALUES(?,?,?,?,?,?)";
                 $postStmt = $mysqli->prepare($postQuery);
                 //bind paramaters
-                $rc=$postStmt->bind_param('sssssssss', $category, $book_publisher, $book_title, $book_author, $book_isbn_no, $book_coverimage, $book_status, $book_summary, $book_copies);
+                $rc=$postStmt->bind_param('ssssss', $category, $servico_title, $_SESSION['login_id'], $servico_coverimage, $servico_status, $servico_summary);
                 $postStmt->execute();
                 //declare a varible which will be passed to alert function
                 if($postStmt)
                 {
-                    $success = "Book Added" && header("refresh:1; url=add_book_per_category.php?category=$category");
+                    $success = "Serviço Added" && header("refresh:1; url=add_service_per_category.php?category=$category");
                 }
                 else 
                 {
-                    $err = "Please Try Again Or Try Later";
+                    $err = "Tente novamente :(";
                 } 
             }
         }    
@@ -57,7 +56,7 @@
     <?php 
         require_once('partials/_navbar.php');
         $category = $_GET['category'];
-        $ret="SELECT * FROM book_categories  WHERE category_id = '$category' "; 
+        $ret="SELECT * FROM service_categories  WHERE category_id = '$category' "; 
         $stmt= $mysqli->prepare($ret) ;
         $stmt->execute();
         $res=$stmt->get_result();
@@ -77,10 +76,10 @@
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
                                 <li class="breadcrumb-item"><a href="javascript:void(0);">Dashboard</a></li>
-                                <li class="breadcrumb-item"><a href="javascript:void(0);">Books</a></li>
-                                <li class="breadcrumb-item"><a href="javascript:void(0);">Book Categories</a></li>
+                                <li class="breadcrumb-item"><a href="javascript:void(0);">Serviços</a></li>
+                                <li class="breadcrumb-item"><a href="javascript:void(0);">Categorias de Serviço</a></li>
                                 <li class="breadcrumb-item"><a href="javascript:void(0);"><?php echo $cat->category_name;?></a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><span>Add Book</span></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span>Adicionar anúncio</span></li>
                             </ol>
                         </nav>
                     </div>
@@ -111,7 +110,7 @@
                                 <div class="widget-header">
                                     <div class="row">
                                         <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                                            <h4>Fill All Fields</h4>
+                                            <h4>Preencha todos os campos</h4>
                                         </div>                                                                        
                                     </div>
                                 </div>
@@ -119,45 +118,27 @@
                                     <form method="POST" enctype="multipart/form-data">
                                         <div class="form-row mb-4">
                                             <div class="form-group col-md-6">
-                                                <label for="inputEmail4">Book Title</label>
-                                                <input type="text" name="book_title" class="form-control">
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <label for="inputPassword4">Book ISN Number</label>
-                                                <input type="text" name="book_isbn_no" value="<?php echo $alpha;?>-<?php echo $beta;?>" class="form-control">
+                                                <label for="inputEmail4">Título do Serviço</label>
+                                                <input type="text" name="servico_title" class="form-control">
                                             </div>
                                         </div>
                                         <div class="form-row mb-4">
                                             <div class="form-group col-md-6">
-                                                <label for="inputEmail4">Book Author</label>
-                                                <input type="text" name="book_author" class="form-control">
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <label for="inputPassword4">Book Publisher</label>
-                                                <input type="text" name="book_publisher"  class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="form-row mb-4">
-                                            <div class="form-group col-md-6">
-                                                <label for="inputEmail4">Book Cover Image</label>
-                                                <input type="file" name="book_coverimage" class="form-control btn btn-outline-success">
+                                                <label for="inputEmail4">Imagem do anúncio</label>
+                                                <input type="file" name="servico_coverimage" class="form-control btn btn-outline-success">
                                             </div>
                                             <div class="form-group col-md-6" style="display:none">
-                                                <label for="inputEmail4">Book Status</label>
-                                                <input type="text" name="book_status"  value="Available" class="form-control btn btn-outline-success">
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <label for="inputPassword4">Book Copies</label>
-                                                <input type="text" name="book_copies"  class="form-control">
+                                                <label for="inputEmail4">Status do serviço</label>
+                                                <input type="text" name="servico_status"  value="Available" class="form-control btn btn-outline-success">
                                             </div>
                                         </div>
                                         <div class="form-row mb-4">
                                             <div class="form-group col-md-12">
-                                                <label for="inputAddress">Book Summary</label>
-                                                <textarea  name="book_summary" rows="10" class="form-control"></textarea>
+                                                <label for="inputAddress">Descrição do anúncio</label>
+                                                <textarea  name="servico_summary" rows="10" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                      <button type="submit" name="book" class="btn btn-primary mt-3">Add Book</button>
+                                      <button type="submit" name="addservico" class="btn btn-primary mt-3">Adicionar Anúncio</button>
                                     </form>
                                 </div>
                             </div>
